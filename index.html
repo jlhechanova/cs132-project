@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html class="scroll-smooth">
+	<head>
+		<title>Rice Price Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- <link rel="stylesheet" href="css/main.css" /> -->
+		<script src="https://cdn.tailwindcss.com" blocking="render"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+		<style>
+			body {
+				font-family: "Manrope";
+			}
+		</style>
+	</head>
+	<body class="flex flex-col">
+		<!-- Nav -->
+			<nav class="fixed top-0 h-16 w-full flex justify-center bg-white shadow-md">
+				<ul class="flex items-center gap-4">
+					<li><a href="#overview">Overview</a></li>
+					<li><a href="#data">Data</a></li>
+					<li><a href="#methods">Methods</a></li>
+					<li><a href="#results">Results</a></li>
+					<li><a href="#team">About Us</a></li>
+				</ul>
+			</nav>
+
+		<!-- Hero -->
+			<div class="pt-16 md:pt-28 pb-10">
+				<img src="bente.jpg" alt="Hanggang saan aabot ang bente pesos mo?" class="mx-auto max-w-full w-[720px]"/>
+				<p class="mt-4 text-4xl font-bold tracking-tight text-center">Not a kilo of rice, <br class="sm:hidden">that's for sure.</p>
+			</div>
+
+		<main class="container lg:w-[1170px] mx-auto px-4 pb-24">
+			<!-- Overview -->
+				<section id="overview" class="pt-20 pb-10">
+					<header class="text-3xl">
+						Overview
+					</header>
+					<div class="flex flex-col md:flex-row gap-8 pt-12">
+						<p class="text-xl font-semibold">
+							Rice is arguably the most important staple food for nearly every Filipino household. However, the cost of rice is rapidly rising despite promises to lower grain prices.
+						</p>
+						<p>
+							We wanted to find out about the status of the rice supply in the Philippines and explore how it relates to the consumer price of rice.
+						</p>
+					</div>
+					<ul class="pt-12 flex flex-col md:flex-row gap-8">
+						<li class="flex-1">
+							<a href="https://www.gmanetwork.com/news/money/economy/896572/rice-inflation-quickened-to-new-14-year-high-in-january-psa/story/" target="_blank"
+							class="flex items-center overflow-hidden rounded-lg bg-black">
+								<img src="rice_gma.jpg" class="w-1/2 aspect-square object-cover">
+								<p class="p-4 text-lg font-bold text-white">Rice inflation quickened to new 14-year high in January — PSA</p>
+							</a>
+						</li>
+						<li class="flex-1">
+							<a href="https://www.philstar.com/headlines/2024/03/07/2338680/da-rice-prices-36-year" target="_blank"
+							class="flex items-center overflow-hidden rounded-lg bg-black">
+								<img src="rice_phil.jpg" class="w-1/2 aspect-square object-cover">
+								<p class="p-4 text-lg font-bold text-white">Department of Agriculture: Rice prices up 36% in a year</p>
+							</a>
+						</li>
+					</ul>
+				</section>
+	
+			<!-- Data -->
+				<section id="data" class="pt-20 pb-10">
+					<header class="text-3xl">
+						Data
+					</header>
+					<div class="flex pt-12">
+						<p>
+							We obtained our data from OpenSTAT, an open data platform used by the Philippine Statistics Office (PSA) to share data. We found data on consumer price indexes, retail prices, as well as production and imports for rice in OpenSTAT.
+						</p>
+						<a href="https://www.example.com" target="_blank" class="text-sky-500">Click here to view our dataset.</a>
+					</div>
+				</section>
+	
+			<!-- Methods -->
+				<section id="methods" class="pt-20 pb-10">
+					<header class="text-3xl">
+						Methodology
+					</header>
+					<div class="pt-12">
+						<p>Let's talk about our data science methodology.</p>
+					</div>
+				</section>
+	
+			<!-- Results -->
+				<section id="results" class="pt-20 pb-10">
+					<header class="text-3xl">
+						Results
+					</header>
+					<div class="pt-12">
+						<p>Here's what we found out.</p>
+					</div>
+				</section>
+	
+			<!-- Team -->
+				<section id="team" class="pt-20 pb-10">
+					<header class="text-3xl">
+						About Us
+					</header>
+					<div class="pt-12">
+						<ul class="flex flex-col md:flex-row gap-8">
+							<li class="flex-1 p-8 text-center text-white bg-black">
+								<p class="text-2xl font-bold">Cal Dupalco</p>
+								<img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/avatar-the-last-airbender/b/b0/Aang_img.jpg?width=325" class="mx-auto my-8 w-1/2 md:w-full aspect-square object-cover rounded-full">
+							</li>
+							<li class="flex-1 p-8 text-center text-white bg-black">
+								<p class="text-2xl font-bold">Clarice Sandoval</p>
+								<img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/08/atla-katara-cropped.jpg" class="mx-auto my-8 w-1/2 md:w-full aspect-square object-cover rounded-full">
+							</li>
+							<li class="flex-1 p-8 text-center text-white bg-black">
+								<p class="text-2xl font-bold">Jared Hechanova</p>
+								<img src="https://amandajmcgee.com/wp-content/uploads/2018/09/sokka.png?w=736" class="mx-auto my-8 w-1/2 md:w-full aspect-square object-cover rounded-full">
+								<p class="text-left">I'm Jared, currently an undergraduate student studying computer science. My main interest is web development, but when I'm not busy programming you can find me try-harding in Dota, min-maxing in Genshin Impact, studying poker, or sleeping.</p>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+		</main>
+	</body>
+</html>
