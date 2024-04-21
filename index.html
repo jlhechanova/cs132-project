@@ -17,7 +17,7 @@
 	</head>
 	<body class="flex flex-col">
 		<!-- Nav -->
-			<nav class="fixed top-0 h-16 w-full flex justify-center bg-white shadow-md">
+			<nav class="fixed top-0 h-16 w-full flex justify-center bg-white shadow-md print:hidden">
 				<ul class="flex items-center gap-4">
 					<li><a href="#overview">Overview</a></li>
 					<li><a href="#data">Data</a></li>
@@ -39,30 +39,88 @@
 					<header class="text-3xl">
 						Overview
 					</header>
-					<div class="flex flex-col md:flex-row gap-8 pt-12">
-						<p class="text-xl font-semibold">
-							Rice is arguably the most important staple food for nearly every Filipino household. However, the cost of rice is rapidly rising despite promises to lower grain prices.
-						</p>
+					<div class="flex flex-col md:flex-row gap-20 pt-12">
+						<div>
+							<p class="text-xl font-semibold">
+								Rice is arguably the most important staple food for nearly every Filipino household. However, the cost of rice has continued to steadily rise despite promises to lower grain prices.
+							</p>
+							<p class="pt-8">
+								We wanted to find out about the status of the rice supply in the Philippines and explore how it relates to the consumer price of rice.
+							</p>
+						</div>
+						<ul>
+							<li>
+								<p class="font-bold">Problem</p>
+								<p>The cost of rice has continued to rise amidst efforts to address the escalating rice prices.</p>
+							</li>
+							<li class="pt-4">
+								<p class="font-bold">Solution</p>
+								<p>Use data science to analyze the relationship between rice supply and consumer prices to provide actionable insights to policymakers to ensure food security in the Philippines.</p>
+							</li>
+						</ul>
+					</div>
+
+					<div class="pt-12">
 						<p>
-							We wanted to find out about the status of the rice supply in the Philippines and explore how it relates to the consumer price of rice.
+							During the 2022 presidential elections, former senator Ferdinand "Bongbong" Marcos Jr. made the campaign promise to lower the price of rice down to ₱20 per kilo.
+							Despite efforts to achieve this ambitious price point, recent data from the Philippine Statistics Authority and the Department of Agriculture revealed substantial surges in rice inflation rates.
+							The PSA reported a new 14-year high in rice inflation in January 2024, reaching 22.6%, attributed to factors such as high prices in the world market and a low base effect from the previous year. Additionally, the DA noted a 36% spike in retail rice prices in March 2024 compared to the previous year, prompting concerns about food security and discussions on stabilization measures.
 						</p>
 					</div>
+
 					<ul class="pt-12 flex flex-col md:flex-row gap-8">
 						<li class="flex-1">
+							<a href="https://newsinfo.inquirer.net/1584241/bongbong-marcos-vows-to-bring-down-price-of-rice" target="_blank"
+							class="flex items-center overflow-hidden rounded-lg bg-black text-white hover:text-green-500 transition">
+								<img src="bbm.jpg" class="w-5/12 aspect-square object-cover">
+								<p class="p-4 text-lg font-bold text-inherit">Bongbong Marcos vows to bring down price of rice</p>
+							</a>
+						</li>
+						<li class="flex-1">
 							<a href="https://www.gmanetwork.com/news/money/economy/896572/rice-inflation-quickened-to-new-14-year-high-in-january-psa/story/" target="_blank"
-							class="flex items-center overflow-hidden rounded-lg bg-black">
-								<img src="rice_gma.jpg" class="w-1/2 aspect-square object-cover">
-								<p class="p-4 text-lg font-bold text-white">Rice inflation quickened to new 14-year high in January — PSA</p>
+							class="flex items-center overflow-hidden rounded-lg bg-black text-white hover:text-green-500 transition">
+								<img src="rice_gma.jpg" class="w-5/12 aspect-square object-cover">
+								<p class="p-4 text-lg font-bold text-inherit">Rice inflation quickened to new 14-year high in January — PSA</p>
 							</a>
 						</li>
 						<li class="flex-1">
 							<a href="https://www.philstar.com/headlines/2024/03/07/2338680/da-rice-prices-36-year" target="_blank"
-							class="flex items-center overflow-hidden rounded-lg bg-black">
-								<img src="rice_phil.jpg" class="w-1/2 aspect-square object-cover">
-								<p class="p-4 text-lg font-bold text-white">Department of Agriculture: Rice prices up 36% in a year</p>
+							class="flex items-center overflow-hidden rounded-lg bg-black text-white hover:text-green-500 transition">
+								<img src="rice_phil.jpg" class="w-5/12 aspect-square object-cover">
+								<p class="p-4 text-lg font-bold text-inherit">Department of Agriculture: Rice prices up 36% in a year</p>
 							</a>
 						</li>
 					</ul>
+
+					<div class="pt-24">
+						<p>
+							...so, we wanted to find out.
+						</p>
+						<p class="pt-8">
+							Considering the dynamics between palay stocks, local agricultural production, and agricultural imports, how do fluctuations in these factors affect the consumer prices of rice in the Philippines?
+						</p>
+					</div>
+
+					<div class="pt-12 pb-8 flex flex-col md:flex-row gap-8 text-center">
+						<div class="p-6 basis-1/2 rounded-lg shadow-md">
+							<p class="text-center font-bold">Null Hypothesis</p>
+							<p>
+								Consumer prices of rice are not influenced by variations in palay stocks, agricultural production, and agricultural imports.
+							</p>
+						</div>
+						<div class="p-6 basis-1/2 rounded-lg shadow-md">
+							<p class="text-center font-bold">Alternative Hypothesis</p>
+							<p>
+								Consumer prices of rice are influenced by variations in palay stocks, agricultural production, or agricultural imports, which also suggests varying degrees of impact.
+							</p>
+						</div>
+					</div>
+					<div class="p-6 col-span-2 rounded-lg shadow-md">
+						<p class="text-center font-bold">Action Plan</p>
+						<p>
+							Analyze data from government reports and market analyses regarding variations in palay stocks, local agricultural production, agricultural imports, and consumer prices.
+						</p>
+					</div>
 				</section>
 	
 			<!-- Data -->
@@ -70,11 +128,26 @@
 					<header class="text-3xl">
 						Data
 					</header>
-					<div class="flex pt-12">
+					<div class="flex flex-col pt-12 gap-4">
+						<p>
+							Our dataset consists of the monthly rice stocks ranging from May 2023 up to March 2024, quarterly local production of rice per region until the end of 2023, monthly imports of rice from May 2023 to February 2024, bimonthly consumer prices of rice per region from May 2023 up to the first phase of April 2024, and suggested daily household budgets & minimum wages per region, taken monthly from May 2023 up to March 2024.
+						</p>
+						<p>
+							We obtained most of our data from OpenSTAT, an open data platform used by the Philippine Statistics Office (PSA) to share data. This is where we gathered the data on monthly rice stocks, regional rice production per quarter, and amounts of rice imported from other countries. We also obtained data on retail prices of three commercially sold types of rice from PSA reports from the first phase of May 2023 up to the first phase of April 2024. Lastly, our values for the suggested daily budget and the nominal minimum wage comes from the IBON Foundation, from their infographics regarding minimum wage versus family living wage per region. The family living wage, the daily cost to maintain a family of five, is used as the suggested daily budget for Filipino households.
+						</p>
+						<div>
+							<p>The preprocessing done on the datasets were the following:</p>
+							<ul class="pl-6 list-disc">
+								<li>Filtering out empty rows in the Rice Importation sheets.</li>
+								<li>Filling in empty values for CARAGA/Region XIII in the Suggested Daily Budget sheet by using the mean of every other region.</li>
+								<li>Filling in empty values for June 2023 in the Suggested Daily Budget sheet by using the average between the May and July 2023 data points per region.</li>
+								<li>Filling in empty values for June 2023 in the Minimum Wage Income sheet by copying the data from May 2023, since it is expected to change only when there is a wage hike in the region.</li>
+							</ul>
+						</div>
 						<p>
 							We obtained our data from OpenSTAT, an open data platform used by the Philippine Statistics Office (PSA) to share data. We found data on consumer price indexes, retail prices, as well as production and imports for rice in OpenSTAT.
 						</p>
-						<a href="https://www.example.com" target="_blank" class="text-sky-500">Click here to view our dataset.</a>
+						<a href="https://docs.google.com/spreadsheets/d/1B8ncoVaSu3SGDqR8OQ_PbnG1YVnpZbWwpPcSOazQGNU/edit?usp=sharing" target="_blank" class="rounded-lg p-3 w-fit bg-green-500 text-white font-bold transition hover:bg-green-700">Click here to view our dataset.</a>
 					</div>
 				</section>
 	
@@ -87,7 +160,7 @@
 						<p>Let's talk about our data science methodology.</p>
 					</div>
 				</section>
-	
+
 			<!-- Results -->
 				<section id="results" class="pt-20 pb-10">
 					<header class="text-3xl">
@@ -116,7 +189,6 @@
 							<li class="flex-1 p-8 text-center text-white bg-black">
 								<p class="text-2xl font-bold">Jared Hechanova</p>
 								<img src="https://amandajmcgee.com/wp-content/uploads/2018/09/sokka.png?w=736" class="mx-auto my-8 w-1/2 md:w-full aspect-square object-cover rounded-full">
-								<p class="text-left">I'm Jared, currently an undergraduate student studying computer science. My main interest is web development, but when I'm not busy programming you can find me try-harding in Dota, min-maxing in Genshin Impact, studying poker, or sleeping.</p>
 							</li>
 						</ul>
 					</div>
