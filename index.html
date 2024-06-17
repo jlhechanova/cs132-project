@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html class="scroll-smooth">
 	<head>
-		<title>Rice Price Analysis</title>
+		<title>Rice Supply & Prices: Insights for Philippine Food Security</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- <link rel="stylesheet" href="css/main.css" /> -->
@@ -21,7 +21,7 @@
 				<ul class="flex items-center gap-4">
 					<li><a href="#overview">Overview</a></li>
 					<li><a href="#data">Data</a></li>
-					<li><a href="#methods">Methods</a></li>
+					<li><a href="#exploration">Exploration</a></li>
 					<li><a href="#results">Results</a></li>
 					<li><a href="#team">About Us</a></li>
 				</ul>
@@ -105,13 +105,13 @@
 						<div class="p-6 basis-1/2 rounded-lg shadow-md">
 							<p class="text-center font-bold">Null Hypothesis</p>
 							<p>
-								Consumer prices of rice are not influenced by variations in palay stocks, agricultural production, and agricultural imports.
+								Consumer prices of rice are not associated with variations in palay stocks, agricultural production, and agricultural imports.
 							</p>
 						</div>
 						<div class="p-6 basis-1/2 rounded-lg shadow-md">
 							<p class="text-center font-bold">Alternative Hypothesis</p>
 							<p>
-								Consumer prices of rice are influenced by variations in palay stocks, agricultural production, or agricultural imports, which also suggests varying degrees of impact.
+								Consumer prices of rice are associated with variations in palay stocks, agricultural production, or agricultural imports, which also suggests varying degrees of impact.
 							</p>
 						</div>
 					</div>
@@ -130,31 +130,45 @@
 					</header>
 					<div class="flex flex-col pt-12 gap-4">
 						<p>
-							Our dataset consists of the monthly rice stocks ranging from May 2023 up to March 2024, quarterly local production of rice per region until the end of 2023, monthly imports of rice from May 2023 to February 2024, bimonthly consumer prices of rice per region from May 2023 up to the first phase of April 2024, and suggested daily household budgets & minimum wages per region, taken monthly from May 2023 up to March 2024.
+							Our dataset consists of annual national data on various variables related to rice supply and pricing in the Philippines, spanning from 1995 to 2023. Additionally, we included economic variables from 2012 to 2023 to provide a comprehensive analysis of the affordability of rice.
 						</p>
 						<p>
-							We obtained most of our data from OpenSTAT, an open data platform used by the Philippine Statistics Office (PSA) to share data. This is where we gathered the data on monthly rice stocks, regional rice production per quarter, and amounts of rice imported from other countries. We also obtained data on retail prices of three commercially sold types of rice from PSA reports from the first phase of May 2023 up to the first phase of April 2024. Lastly, our values for the suggested daily budget and the nominal minimum wage comes from the IBON Foundation, from their infographics regarding minimum wage versus family living wage per region. The family living wage, the daily cost to maintain a family of five, is used as the suggested daily budget for Filipino households.
+							The data on local rice production, rice imports, and rice stocks, measured in thousand metric tons, were obtained from the Philippine Statistics Authority's OpenSTAT platform. Retail prices for different types of rice (Special, Well Milled, and Regular Milled), measured in PHP per kilogram, were also sourced from the PSA's OpenSTAT database. These variables span the years from 1995 to 2023.
 						</p>
-						<div>
-							<p>The preprocessing done on the datasets were the following:</p>
-							<ul class="pl-6 list-disc">
-								<li>Filtering out empty rows in the Rice Importation sheets.</li>
-								<li>Filling in empty values for CARAGA/Region XIII in the Suggested Daily Budget sheet by using the mean of every other region.</li>
-								<li>Filling in empty values for June 2023 in the Suggested Daily Budget sheet by using the average between the May and July 2023 data points per region.</li>
-								<li>Filling in empty values for June 2023 in the Minimum Wage Income sheet by copying the data from May 2023, since it is expected to change only when there is a wage hike in the region.</li>
-							</ul>
-						</div>
+						<p>
+							To analyze the affordability of rice over time, we incorporated data on the suggested daily budget, derived by dividing the monthly food threshold for a family of five by 30, resulting in a daily amount in PHP. This data, along with daily minimum wage income (in PHP per day), was collected from various reports and publications spanning from 2012 to 2023, including sources such as the Official Gazette, Philippine Daily Inquirer, Trading Economics (which sources its data from DOLE), and PSA. Furthermore, we included data on the average daily rice consumption per person, measured in grams, sourced from the PSA's OpenSTAT platform. This data also spans from 2012 to 2023.
+						</p>
+						<p>
+							For preprocessing, we filled in missing values for the suggested daily budget for 2016 using the mean of the values from 2015 and 2017. Similarly, for the average daily rice consumption per person in 2023, we used the mean of the values from 2012 to 2022 to fill in the gaps. These steps ensured that our dataset was complete, enabling us to investigate the correlation and trends between rice supply, consumer prices, and affordability in the Philippines.
+						</p>
 						<a href="https://docs.google.com/spreadsheets/d/1B8ncoVaSu3SGDqR8OQ_PbnG1YVnpZbWwpPcSOazQGNU/edit?usp=sharing" target="_blank" class="rounded-lg p-3 w-fit bg-green-500 text-white font-bold transition hover:bg-green-700">Click here to view our dataset.</a>
 					</div>
 				</section>
 	
-			<!-- Methods -->
-				<section id="methods" class="pt-20 pb-10">
+			<!-- Exploration -->
+				<section id="exploration" class="pt-20 pb-10">
 					<header class="text-3xl">
-						Methodology
+						Exploration
 					</header>
 					<div class="pt-12">
-						<p>Let's talk about our data science methodology.</p>
+						<p class="text-2xl">Data Preprocessing</p>
+						<div class="pt-8">
+							<p class="font-bold">Handling Missing Values</p>
+							<p>
+								The datasets for the annual data on rice production, rice importation, rice stocks, and rice retail prices were confirmed to have no missing values. However, we found that the suggested daily budget for 2016 was missing, where we decided to use the mean values from 2015 and 2017. Similarly, the average daily rice consumption for 2023 was not available, thus we used the mean of the values from 2012 to 2022 to fill for 2023.
+							</p>
+						</div>
+						<div class="pt-8">
+							<p class="font-bold">Data Transformation</p>
+							<p>
+								The values in the datasets we obtained were formatted as comma-separated numbers, which were considered strings and had to be converted to numerics to become suitable for quantitative operations.
+							</p>
+						</div>
+					</div>
+					<div class="pt-8">
+						<p class="text-2xl">
+							Exploratory Data Analysis
+						</p>
 					</div>
 				</section>
 
@@ -178,14 +192,17 @@
 							<li class="flex-1 p-8 text-center text-white bg-black">
 								<p class="text-2xl font-bold">Cal Dupalco</p>
 								<img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/avatar-the-last-airbender/b/b0/Aang_img.jpg?width=325" class="mx-auto my-8 w-1/2 md:w-full aspect-square object-cover rounded-full">
+								<p>I have a wide array of interests not only within the field of computer science, but in other topics such as culinary history, art, and music. If I'm not working on code, I'm usually either writing music or drawing digital art.</p>
 							</li>
 							<li class="flex-1 p-8 text-center text-white bg-black">
 								<p class="text-2xl font-bold">Clarice Sandoval</p>
 								<img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/08/atla-katara-cropped.jpg" class="mx-auto my-8 w-1/2 md:w-full aspect-square object-cover rounded-full">
+								<p>I'm a computer science student dedicated to solving problems and creating new possibilities through technology. When I'm not immersed in coding, you'll often find me indulging in the captivating narratives of dramas, finding inspiration in the stories that unfold on screen.</p>
 							</li>
 							<li class="flex-1 p-8 text-center text-white bg-black">
 								<p class="text-2xl font-bold">Jared Hechanova</p>
 								<img src="https://amandajmcgee.com/wp-content/uploads/2018/09/sokka.png?w=736" class="mx-auto my-8 w-1/2 md:w-full aspect-square object-cover rounded-full">
+								<p>I'm Jared, currently an undergraduate student studying computer science. My main interest is in web development, but when I'm not busy programming you can find me studying poker or sleeping.</p>
 							</li>
 						</ul>
 					</div>
