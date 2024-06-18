@@ -160,14 +160,14 @@
 					</header>
 					<div class="pt-12">
 						<p class="text-2xl">Authorization</p>
-						<div class="pt-8 pb-4">
+						<div class="pt-8 pb-8">
 							<p>
 								Authentication was performed to access the dataset stored in Google Sheets for this project. This process involved verifying access credentials and generating an authentication token using Google's authentication techniques. The dataset was accessed through the Google Sheets’ URL to facilitate secure retrieval and use of data. This method ensured seamless access of the dataset for data analysis.
 							</p>
 						</div>
 						
 						<p class="text-2xl">Data Preparation and Preprocessing</p>
-						<div class="pt-8 pb-4">
+						<div class="pt-8 pb-8">
 							<p>
 								Our initial dataset consists of the monthly regional data of the variables ranging from May 2023 to December 2023. However, we have recognized the need to widen the scope of the dataset for a more comprehensive analysis of trends and patterns on rice supply and prices in the Philippines over time. Hence, we expanded the data by obtaining the annual national data of rice supply and prices from 1995 to 2023 and the annual national data of economic variables from 2012 to 2023.
 							</p>
@@ -175,6 +175,8 @@
 								The data underwent preprocessing which included formatting and converting data into numeric values, as well as handling missing values as needed, to ensure consistency and accuracy across the dataset. These steps were crucial in preparing a robust dataset suitable for regression models and time-series analysis.
 
 							</p>
+						</div>
+						<div class="pt-8">
 							<p class="font-bold">Handling Missing Values</p>
 							<p>
 								The datasets for the annual data on rice production, rice importation, rice stocks, and rice retail prices were confirmed to have no missing values. However, we found that the suggested daily budget for 2016 was missing, where we decided to use the mean values from 2015 and 2017. Similarly, the average daily rice consumption for 2023 was not available, thus we used the mean of the values from 2012 to 2022 to fill for 2023.
@@ -191,7 +193,7 @@
 						<p class="text-2xl">Exploratory Data Analysis</p>
 						<div class="pt-8">
 							<div class="pt-8 pb-4">
-								<p class="text-xl">Linear Regression</p>
+								<p class="text-xl pb-4">Linear Regression</p>
 								<p>
 									To test our first research question, we employed two modeling techniques: linear regression and polynomial regression. Linear regression is used to determine the correlation between independent variables and see if any of them are correlated with each other. Aside from the coefficients and the intercepts gained from linear regression modeling, both the Pearson’s correlation coefficient and the Spearman’s rank correlation coefficient were also calculated to determine how strongly correlated the variables are. Why we chose both is that Pearson’s correlation coefficient is great for determining linear correlation (or the change in variable X corresponds to a constant change in variable Y) while Spearman’s rank correlation coefficient is great for finding monotonic, nonlinear correlations between variables (in other words, if X increases, then Y increases and vice versa regardless of how great or little the change is).
 								</p>
