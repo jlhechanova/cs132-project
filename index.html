@@ -45,7 +45,7 @@
 								Rice is arguably the most important staple food for nearly every Filipino household. However, the cost of rice has continued to steadily rise despite promises to lower grain prices.
 							</p>
 							<p class="pt-8">
-								We wanted to find out about the status of the rice supply in the Philippines and explore how it relates to the consumer price of rice.
+								We wanted to find out about the status of the rice supply in the Philippines and explore how it relates to the retail price of rice.
 							</p>
 						</div>
 						<ul>
@@ -55,7 +55,7 @@
 							</li>
 							<li class="pt-4">
 								<p class="font-bold">Solution</p>
-								<p>Use data science to analyze the relationship between rice supply and consumer prices to provide actionable insights to policymakers to ensure food security in the Philippines.</p>
+								<p>Use data science to analyze the correlation between rice supply and retail prices, and the trends between rice retail prices, suggested daily budget, and minimum wage income. This analysis aims to provide actionable insights to policymakers to ensure food security in the Philippines.</p>
 							</li>
 						</ul>
 					</div>
@@ -97,28 +97,27 @@
 							...so, we wanted to find out.
 						</p>
 						<p class="pt-8">
-							Considering the dynamics between palay stocks, local agricultural production, and agricultural imports, how do fluctuations in these factors affect the consumer prices of rice in the Philippines?
-						</p>
+							Considering the dynamics between rice stocks, local production, and imports, how do fluctuations in these factors correlate with the retail prices of rice in the Philippines? Additionally, based on the suggested daily budget provided by the government and the daily minimum wage income, how affordable is rice based on its retail prices?						</p>
 					</div>
 
 					<div class="pt-12 pb-8 flex flex-col md:flex-row gap-8 text-center">
 						<div class="p-6 basis-1/2 rounded-lg shadow-md">
 							<p class="text-center font-bold">Null Hypothesis</p>
 							<p>
-								Consumer prices of rice are not associated with variations in palay stocks, agricultural production, and agricultural imports.
+								Retail prices of rice are not correlated with variations in rice stocks, local production, and imports, and there is no significant difference in the affordability of rice between the suggested daily budget and minimum wage income.
 							</p>
 						</div>
 						<div class="p-6 basis-1/2 rounded-lg shadow-md">
 							<p class="text-center font-bold">Alternative Hypothesis</p>
 							<p>
-								Consumer prices of rice are associated with variations in palay stocks, agricultural production, or agricultural imports, which also suggests varying degrees of impact.
+								Retail prices of rice are correlated with variations in rice stocks, local production, and imports, which also suggests varying degrees of impact, and there is a significant difference in the affordability of rice between the suggested daily budget and minimum wage income.
 							</p>
 						</div>
 					</div>
 					<div class="p-6 col-span-2 rounded-lg shadow-md">
 						<p class="text-center font-bold">Action Plan</p>
 						<p>
-							Analyze data from government reports and market analyses regarding variations in palay stocks, local agricultural production, agricultural imports, and consumer prices.
+							Analyze data from government reports and market analyses regarding variations in rice stocks, local production, imports, and retail prices, and its affordability relative to the suggested daily budget and minimum wage income.
 						</p>
 					</div>
 				</section>
@@ -130,18 +129,25 @@
 					</header>
 					<div class="flex flex-col pt-12 gap-4">
 						<p>
-							Our dataset consists of annual national data on various variables related to rice supply and pricing in the Philippines, spanning from 1995 to 2023. Additionally, we included economic variables from 2012 to 2023 to provide a comprehensive analysis of the affordability of rice.
+							Our dataset consists of the annual national data of rice supply and pricing variables in the Philippines ranging from 1995 to 2023, and the economic variables from 2012 to 2023 to provide a comprehensive analysis of the affordability of rice.
 						</p>
 						<p>
-							The data on local rice production, rice imports, and rice stocks, measured in thousand metric tons, were obtained from the Philippine Statistics Authority's OpenSTAT platform. Retail prices for different types of rice (Special, Well Milled, and Regular Milled), measured in PHP per kilogram, were also sourced from the PSA's OpenSTAT database. These variables span the years from 1995 to 2023.
+							We obtained most of our data on local rice production, rice imports, and rice stocks, measured in thousand metric tons, from OpenSTAT, an open data platform used by the Philippine Statistics Office (PSA) to share data. Retail prices for different types of rice (Special, Well Milled, and Regular Milled), measured in PHP per kilogram, were also obtained from the PSA's OpenSTAT database. All of these variables range from 1995 to 2023.
 						</p>
 						<p>
-							To analyze the affordability of rice over time, we incorporated data on the suggested daily budget, derived by dividing the monthly food threshold for a family of five by 30, resulting in a daily amount in PHP. This data, along with daily minimum wage income (in PHP per day), was collected from various reports and publications spanning from 2012 to 2023, including sources such as the Official Gazette, Philippine Daily Inquirer, Trading Economics (which sources its data from DOLE), and PSA. Furthermore, we included data on the average daily rice consumption per person, measured in grams, sourced from the PSA's OpenSTAT platform. This data also spans from 2012 to 2023.
+							Furthermore, we derived the data on the suggested daily budget in the Philippines by dividing the monthly food threshold for a family of five by 30 which is the average number of days in a month, resulting in a daily amount in PHP. This data was obtained from the Official Gazette, Philippine Daily Inquirer, and PSA. Meanwhile, the daily minimum wage income, measured in PHP, was collected from the Philippine Daily Inquirer and Trading Economics which sources its data from DOLE. We also included data on the average daily rice consumption per person, measured in grams, sourced from PSA's OpenSTAT. All of these data range from 2012 to 2023.
 						</p>
 						<p>
-							For preprocessing, we filled in missing values for the suggested daily budget for 2016 using the mean of the values from 2015 and 2017. Similarly, for the average daily rice consumption per person in 2023, we used the mean of the values from 2012 to 2022 to fill in the gaps. These steps ensured that our dataset was complete, enabling us to investigate the correlation and trends between rice supply, consumer prices, and affordability in the Philippines.
+							The preprocessing done on the datasets were the following:
 						</p>
-						<a href="https://docs.google.com/spreadsheets/d/1B8ncoVaSu3SGDqR8OQ_PbnG1YVnpZbWwpPcSOazQGNU/edit?usp=sharing" target="_blank" class="rounded-lg p-3 w-fit bg-green-500 text-white font-bold transition hover:bg-green-700">Click here to view our dataset.</a>
+						<ul>
+							<li>Filling in empty values for 2016 in the Suggested Daily Budget by using the mean of the values from 2015 and 2017. </li>
+							<li>Filling in empty values for 2023 in the Average Daily Rice Consumption (per person) by using the mean of the values from 2012 to 2022.</li>
+						</ul>
+						<p>
+							These procedures ensured the comprehensiveness of our dataset and the accuracy of our analysis on the correlation between rice supply and consumer prices in the Philippines.
+						</p>
+						<a href="https://docs.google.com/spreadsheets/d/1GyiDY4g92lsQxTo0hFEmh8reZ5KaRwk-L3wiFMCvn8I/edit?usp=sharing" target="_blank" class="rounded-lg p-3 w-fit bg-green-500 text-white font-bold transition hover:bg-green-700">Click here to view our dataset.</a>
 					</div>
 				</section>
 	
@@ -151,8 +157,22 @@
 						Exploration
 					</header>
 					<div class="pt-12">
-						<p class="text-2xl">Data Preprocessing</p>
+						<p class="text-2x1">Authorization</p>
 						<div class="pt-8">
+							<p>
+								Authentication was performed to access the dataset stored in Google Sheets for this project. This process involved verifying access credentials and generating an authentication token using Google's authentication techniques. The dataset was accessed through the Google Sheets’ URL to facilitate secure retrieval and use of data. This method ensured seamless access of the dataset for data analysis.
+							</p>
+						</div>
+						
+						<p class="text-2xl">Data Preparation and Preprocessing</p>
+						<div class="pt-8">
+							<p>
+								Our initial dataset consists of the monthly regional data of the variables ranging from May 2023 to December 2023. However, we have recognized the need to widen the scope of the dataset for a more comprehensive analysis of trends and patterns on rice supply and prices in the Philippines over time. Hence, we expanded the data by obtaining the annual national data of rice supply and prices from 1995 to 2023 and the annual national data of economic variables from 2012 to 2023.
+							</p>
+							<p>
+								The data underwent preprocessing which included formatting and converting data into numeric values, as well as handling missing values as needed, to ensure consistency and accuracy across the dataset. These steps were crucial in preparing a robust dataset suitable for regression models and time-series analysis.
+
+							</p>
 							<p class="font-bold">Handling Missing Values</p>
 							<p>
 								The datasets for the annual data on rice production, rice importation, rice stocks, and rice retail prices were confirmed to have no missing values. However, we found that the suggested daily budget for 2016 was missing, where we decided to use the mean values from 2015 and 2017. Similarly, the average daily rice consumption for 2023 was not available, thus we used the mean of the values from 2012 to 2022 to fill for 2023.
