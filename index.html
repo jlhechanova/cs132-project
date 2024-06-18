@@ -214,7 +214,7 @@
 							</p>
 
 							<p class="font-bold">Interpretation of Polynomial Regression Plot</p>
-							<!-- img INSERT POLYNOMIAL REGRESSION PLOTS -->
+							<img src="polyreg.png">
 							<p>
 								The various plots drawn with respect to the data points show that there is a very strong correlation between local production and retail prices, whereas there is only a weak to moderate correlation between rice imports and retail prices and between rice stocks and retail prices.
 							</p>
@@ -226,7 +226,7 @@
 							<p>
 								For an alpha level of 0.05, the critical value of the F-test would be 2.45. Our calculations show that the F-statistic of our polynomial regression model is 55.45.
 							</p>
-							<!-- img INSERT FSTAT GRAPH -->
+							<img src="ftest.png">
 							<p>
 								This is not surprising given that many of the independent variables are individually and statistically significant to the retail price. Thus, all of the independent variables— local production, rice imports, rice stocks— would jointly and significantly affect the retail price of rice.
 							</p>
@@ -237,7 +237,7 @@
 								We also wanted to look at how affordable rice has been over the years.
 							</p>
 
-							<!-- img INSERT RETAIL PRICES, MIN WAGE, ETC -->
+							<img src="timeseries.png">
 
 							<p>
 								The plot shows the suggested daily budget, daily minimum wage, and the retail prices of rice from 2012 to 2023. There is an observable positive trend in the chart, which shows that daily wage has kept up with the rise of retail prices.
@@ -247,12 +247,12 @@
 							</p>
 
 							<p class="font-bold">Hypothesis Testing</p>
-							<!-- img INSERT POLYNOMIAL REGRESSION PLOTS -->
+							<img src="ttest.png">
 							<p>
 								We used a two-sample t-test to determine if there is a significant difference between the affordability of rice relative to the suggested daily budget and relative to the minimum wage. Our obtained p-values are all less than 0.05, which indicate that there is a significant difference between them.
 							</p>
 
-							<!-- img P-VALUES FOR EACH RICE TYPE -->
+							<img src="affordability.png">
 							<p>
 								It can be noted that affordability relative to minimum wage has not changed much over the years, which implies that rice has not become more affordable relative to minimum wage even with the increase in the daily minimum wage.
 							</p>
@@ -278,7 +278,7 @@
 					</div>
 					<div class="pt-12">
 						<p class="text-2x1">Old Data Correlation Heatmap</p>
-						<!-- img CORRELATION HEATMAP OF OLD DATA -->
+						<img src="oldcorrelation.png">
 						<div class="pt-8">
 							<p>
 								We also analyzed the correlation between the rice supply and prices using our old dataset which consists of the monthly data ranging from May 2023 to December 2023. The correlation heatmap revealed a weak to moderate correlation between local rice production and retail prices of Special and Well-Milled Rice with Spearman's rank correlation coefficient of 0.63 and 0.31 respectively, while there is a negligible correlation with Regular Rice as the coefficient is 0.063. Slightly moderate correlation exists between rice imports and retail prices of rice with coefficients ranging from 0.26-0.31. Furthermore, there is a weak to moderate correlation between total rice stocks and retail prices of Special and Well-Milled Rice with coefficients of 0.5 and 0.14 respectively, while there is a negative correlation between total stocks and retail price of Regular Rice with -0.14 coefficient.
