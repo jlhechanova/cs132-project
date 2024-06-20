@@ -138,36 +138,13 @@
 							</p>
 						</div>
 						<a href="https://docs.google.com/spreadsheets/d/1GyiDY4g92lsQxTo0hFEmh8reZ5KaRwk-L3wiFMCvn8I/edit?usp=sharing" target="_blank" class="rounded-lg p-3 w-fit bg-green-500 text-white font-bold transition hover:bg-green-700">Click here to view our dataset.</a>
-
-						<div class="pt-12 flex rounded-lg bg-black">
-							<ul class="pt-12 flex flex-col content-center md:flex-row gap-8">
-								<li class="flex-1 items-center">
-									<a href="https://newsinfo.inquirer.net/1584241/bongbong-marcos-vows-to-bring-down-price-of-rice" target="_blank"
-									class="flex items-center overflow-hidden rounded-lg border-2 text-white hover:text-green-500 transition">
-										<p class="p-4 text-inherit">Bongbong Marcos vows to bring down price of rice</p>
-									</a>
-								</li>
-								<li class="flex-1 items-center">
-									<a href="https://www.gmanetwork.com/news/money/economy/896572/rice-inflation-quickened-to-new-14-year-high-in-january-psa/story/" target="_blank"
-									class="flex items-center overflow-hidden rounded-lg border-2 text-white hover:text-green-500 transition">
-										<p class="p-4 text-inherit">Rice inflation quickened to new 14-year high in January — PSA</p>
-									</a>
-								</li>
-								<li class="flex-1 items-center">
-									<a href="https://www.philstar.com/headlines/2024/03/07/2338680/da-rice-prices-36-year" target="_blank"
-									class="flex items-center overflow-hidden rounded-lg border-2 text-white hover:text-green-500 transition">
-										<p class="p-4 text-inherit">Department of Agriculture: Rice prices up 36% in a year</p>
-									</a>
-								</li>
-							</ul>
-						</div>
 					</div>
 				</section>
 	
 			<!-- Methodology -->
 				<section id="methods" class="w-full py-20">
 					<div class="container lg:w-[1170px] mx-auto px-4">
-						<header class="text-3xl">
+						<header class="text-3xl text-green-500">
 							Methodology
 						</header>
 						<p class="pt-12 text-xl">
@@ -211,6 +188,127 @@
 							</div>
 						</div>
 	
+						<div class="pt-12">
+							<div class="flex justify-between">
+								<p class="text-2xl">Visualization</p>
+								<button onclick="toggle('#visual')" class="flex justify-center items-center h-8 w-8 bg-slate-100 rounded-full">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+										<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+									  </svg>
+								</button>
+							</div>
+							<div id="visual" class="transition-all overflow-hidden" style="height: 0px;">
+								<div id="visualcontent" class="pt-8">
+									<div>
+										<p>
+											We transformed our dataset into intuitive plots and graphs to illustrate and easily visualize the complex relationships and trends in rice supply, retail prices, daily budget, and minimum wage across the Philippines.
+										</p>
+										<div>
+											<p class="text-xl pb-4">Correlation Heatmap</p>
+											<img src="nutshell.png" class="pt-8 pb-12">
+											<p>
+												To test our first research question, we employed two modeling techniques: linear regression and polynomial regression. Linear regression is used to determine the correlation between independent variables and see if any of them are correlated with each other. Aside from the coefficients and the intercepts gained from linear regression modeling, both the Pearson’s correlation coefficient and the Spearman’s rank correlation coefficient were also calculated to determine how strongly correlated the variables are. Why we chose both is that Pearson’s correlation coefficient is great for determining linear correlation (or the change in variable X corresponds to a constant change in variable Y) while Spearman’s rank correlation coefficient is great for finding monotonic, nonlinear correlations between variables (in other words, if X increases, then Y increases and vice versa regardless of how great or little the change is).
+											</p>
+										</div>
+			
+										<div class="pt-12 pb-4">
+											<p class="text-xl">Hypothesis Testing and Results for Linear Regression</p>
+											
+											<p class="text-lg font-bold pt-4 pb-4">Local Production and Retail Price</p>
+			
+											<p class="pb-4">
+												For the linear regression between local production and the retail prices of rice, a strong positive correlation is observed in all three pairs of variables: local production and the price of special rice, local production and the price of well-milled rice, and local production and the price of regular milled rice. All three of the p-values observed are well below the threshold of 0.05, all of them around with an order of magnitude of -13, which means that local rice production and retail rice prices are significantly correlated. The coefficients range from 0.0043 to 0.0051, which means for every million metric tons of rice produced, the retail price of rice would change by 4.30 to 5.10 pesos. The Pearson’s correlation coefficient ranges from 0.930 to 0.933, which implies a strong linear positive correlation between local production and price. The same statement could be made with the Spearman’s rank correlation coefficient, which ranges from 0.947 to 0.967, implying a strong positive monotonic correlation.
+											</p>
+											<p class="pb-4">
+												This is unexpected since by the economic law of supply and demand, if local production increases, the supply of rice increases and the price of rice should decrease as a result. However, it is possible that there is a confounding factor or several confounding factors influencing both variables such as population growth, which dictates the growth of demand for rice.
+											</p>
+											
+											<p class="text-lg font-bold pt-4 pb-4">Rice Imports and Retail Price</p>
+											
+											<p class="pb-4">
+												The correlation between rice imports and retail rice prices, although positive, is less strong compared to that of local production and retail prices. All three p-values are less than 0.05, which suggest that there is a significant correlation between rice imports and rice retail prices. The Pearson’s correlation coefficients range between 0.491 and 0.568, while the Spearman’s rank correlation coefficients range between 0.468 and 0.536, suggesting only a moderate correlation between the two variables. The coefficients of the linear regression vary from 0.0051 to 0.0069, implying that for every million metric tons of rice imported, the retail price increases by 5.10 to 6.90 pesos.
+											</p>
+											<p class="pb-4">
+												It is possible there is not as strong of a correlation between the two variables since rice importation has been mainly a reactionary measure in the past years in response to rice shortages (such as in the case of 2008 when former President Gloria Macapagal Arroyo temporarily lifted import restrictions on rice in anticipation of rice shortages) and natural disasters (such as the worldwide 1997-98 El Nino event, where the Philippines along with several countries experienced severe droughts from June 1997 to June 1998). From our dataset, it could be seen that rice importation greatly increased in 2019 and onwards, which was around the time former President Rodrigo Roa Duterte signed the Rice Tariffication Law into effect. The aim of the Rice Tariffication Law was to replace restrictions on how much rice is allowed to be imported by private traders with the imposition of tariffs and taxes on those goods instead in order to lower rice prices by increasing the available supply. However, if there is a positive correlation between rice imports and retail rice prices, then it means that rice imports actually have done little to curb the increasing prices of rice in the market, contrary to the aims of the Rice Tariffication Law. That being said, it is still possible for the two variables to not be caused by each other but instead influenced by confounding variables, as in the previous section.
+											</p>
+											
+											
+				
+											<p class="text-lg font-bold pt-4 pb-4">Rice Stocks and Retail Price</p>
+											
+											<p class="pb-4">
+												The p-values of all the linear regression models done between rice stocks and the retail prices of different types of rice in the market are all less than 0.05; thus, we are 95% sure that there is a significant correlation between rice stocks and the retail prices of rice. However, looking into the correlation coefficients for each model, we see that the Pearson’s correlation coefficients range between 0.491 and 0.568 and that the Spearman’s rank correlation coefficients range between 0.468 and 0.536. This means that while there is a significant positive correlation, it is only moderate. The coefficients of the models range from 0.0096 to 0.0116, which means that for every increase in one million metric tons of rice stocks, the retail price also increases by 9.60 to 11.60 pesos.
+											</p>
+											<p class="pb-4">
+												It is possible that because the rice stocks include those for household use (compared to rice sold commercially), we get a moderate correlation. Since household rice stocks do not and should not affect the retail rice prices, since they are not for commercial sale, only rice stocks for commercial use and NFA use should be considered to determine the correlation of the variables. However, because there is a positive correlation between the two variables, there may be some confounding variables affecting the correlation, which goes against the expected relation of supply and demand.
+											</p>
+											
+												
+											<p class="text-lg font-bold pt-4 pb-4">Rice Imports and Local Production</p>
+											
+											<p class="pb-4">
+												The p-value of the linear regression model between local rice production and rice imports is less than 0.05 (= 0.0067), so we are 95% sure that there is a significant correlation between the two variables. However, the correlation coefficients show that this correlation is not strong, with Pearson’s reporting a value of 0.492 and Spearman’s reporting a value of 0.510.
+											</p>
+											<p class="pb-4">
+												It is possible that the aforementioned sporadic nature of rice importation before 2019 resulted in the weak correlation between local rice production and rice imports. Hence, if we wanted to see more conclusive effects of rice imports on local rice production, it would be best to have started the scope of our data from 2019 since that was when quantitative restrictions on rice imports were replaced with tariffs instead. Furthermore, the Rice Competitiveness Enhancement Fund was created alongside the Rice Tariffication Law to bolster the local rice industry by using the tariffs to fund new equipment, better seeds, and subsidies. The NFA’s importation abilities had also been limited to buffer stocking from local farmers. These could possibly reduce or offset the negative effects that tariffed importation of rice by private traders could introduce to local production by making sure that local producers can still compete with imported rice.
+											</p>
+											
+										</div>
+									</div>
+									<div class="pt-8">
+										<p class="text-xl pb-4">Polynomial Regression</p>
+										<p class="pb-4">
+											Polynomial regression was then employed to further determine the relationship between each of the independent variables (local rice production, rice imports, and rice stocks) with the dependent variable (retail price of rice). This was chosen because we believe that there may be a pattern in the data that is not necessarily linear and monotonic, given the results of the previous correlation coefficients show that the correlations of the latter two variables with retail rice prices, while significant, are only moderate.
+										</p>
+			
+										<p class="text-xl pt-8 pb-8">Interpretation of Polynomial Regression Plot</p>
+										<img src="polyreg.png" class="pb-8">
+										<p class="pb-4">
+											The various plots drawn with respect to the data points show that there is a very strong correlation between local production and retail prices, whereas there is only a weak to moderate correlation between rice imports and retail prices and between rice stocks and retail prices.
+										</p>
+			
+										<p class="text-xl pt-8 pb-8">Hypothesis Testing and Results for Polynomial Regression</p>
+										<p class="pb-4">
+											To test our hypothesis built on polynomial regression models, the F-test was used to determine the significance of all the independent variables put together, which is possible for polynomial regression. The F-test checks how well the regression model predicts the data rather than individual variables.
+										</p>
+										<p class="pb-4">
+											For an alpha level of 0.05, the critical value of the F-test would be 2.45. Our calculations show that the F-statistic of our polynomial regression model is 55.45.
+										</p>
+										<img src="ftest.png" class="pb-8">
+										<p class="pb-4">
+											This is not surprising given that many of the independent variables are individually and statistically significant to the retail price. Thus, all of the independent variables— local production, rice imports, rice stocks— would jointly and significantly affect the retail price of rice.
+										</p>
+									</div>
+									<div class="pt-8">
+										<p class="text-xl pb-4">Retail Prices, Suggested Daily Budget, and Daily Minimum Wage</p>
+										<p class="pb-4">
+											We also wanted to look at how affordable rice has been over the years.
+										</p>
+			
+										<img src="timeseries.png" class="pb-8">
+			
+										<p class="pb-4">
+											The plot shows the suggested daily budget, daily minimum wage, and the retail prices of rice from 2012 to 2023. There is an observable positive trend in the chart, which shows that daily wage has kept up with the rise of retail prices.
+										</p>
+										<p class="pb-4">
+											We also decided to look at the average daily consumption of rice and how it measures relative to the suggested daily budget and minimum wage. We computed affordability to be the percentage of the amount remaining from the suggested daily budget and minimum wage after subtracting daily cost spent on rice.
+										</p>
+			
+										<p class="text-xl pt-8 pb-8">Hypothesis Testing</p>
+										<img src="ttest.png" class="pb-8">
+										<p class="pb-4">
+											We used a two-sample t-test to determine if there is a significant difference between the affordability of rice relative to the suggested daily budget and relative to the minimum wage. Our obtained p-values are all less than 0.05, which indicate that there is a significant difference between them.
+										</p>
+			
+										<img src="affordability.png" class="pb-8">
+										<p class="pb-4">
+											It can be noted that affordability relative to minimum wage has not changed much over the years, which implies that rice has not become more affordable relative to minimum wage even with the increase in the daily minimum wage.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="pt-12">
 							<div class="flex justify-between">
 								<p class="text-2xl">Exploratory Data Analysis</p>
