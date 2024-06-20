@@ -13,16 +13,6 @@
 			body {
 				font-family: "Manrope";
 			}
-
-			@keyframes slide {
-				0% {
-					transform: scaleY(0)
-				}
-
-				100% {
-					transform: scaleY(1)
-				}
-			}
 		</style>
 	</head>
 	<body class="flex flex-col">
@@ -31,7 +21,7 @@
 				<ul class="flex items-center gap-4">
 					<li><a href="#overview">Overview</a></li>
 					<li><a href="#data">Data</a></li>
-					<li><a href="#exploration">Exploration</a></li>
+					<li><a href="#methods">Methodology</a></li>
 					<li><a href="#results">Results</a></li>
 					<li><a href="#team">About Us</a></li>
 				</ul>
@@ -163,11 +153,11 @@
 					</div>
 				</section>
 	
-			<!-- Exploration -->
-				<section id="exploration" class="w-full py-20">
+			<!-- Methodology -->
+				<section id="methods" class="w-full py-20">
 					<div class="container lg:w-[1170px] mx-auto px-4">
 						<header class="text-3xl">
-							Exploration
+							Methodology
 						</header>
 						<div class="pt-12">
 							<div class="flex justify-between">
@@ -359,6 +349,28 @@
 								</div>
 							</div>
 						</div>
+						<div class="pt-12">
+							<div class="flex justify-between">
+								<p class="text-2xl">Modeling</p>
+								<button onclick="toggle('#modeling')" class="flex justify-center items-center h-8 w-8 bg-slate-100 rounded-full">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+										<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+									  </svg>
+								</button>
+							</div>
+							<div id="modeling" class="transition-all overflow-hidden" style="height: 0px;">
+								<div id="modelingcontent" class="pt-8">
+									<p class="pb-8">
+										For our predictor model, we went with a random decision forest as it can effectively handle complex, non-linear relationships among multiple variables by creating multiple decision trees during training.
+									</p>
+									<img src="modelscatter.png" class="pb-8">
+									<p class="pb-8">
+										After training our random forest model on the dataset, the model was tested. The mean absolute error of the model is around 2.76, which means the predicted prices of rice can vary by around 2.75 pesos, which may be a small margin of error in the range of retail rice prices. Looking at the defined features of the model, local production is the feature with the highest importance, with an importance of 0.957528, compared to the importance of other features, which sit in the range of 0.01. Thus, this reinforces the idea from our exploratory data analysis that local production is the main predictor of retail rice prices.
+									</p>
+									<img src="residual.png" >
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 
@@ -370,6 +382,26 @@
 						</header>
 						<div class="pt-12">
 							<p>Here's what we found out.</p>
+							<div class="flex flex-col md:flex-row gap-6">
+								<div class="p-5 basis-1/3 rounded-lg shadow-md">
+									<p>
+										Local rice production has been a main factor in determining retail rice prices in the country, illustrating a strong positive correlation. This highlights the importance of local agricultural production to stabilize prices and ensure consistent supply of rice.
+									</p>
+								</div>
+								<div class="p-5 basis-1/3 rounded-lg shadow-md">
+									<p>
+										Rice imports and stocks only showed moderate correlations with retail prices of rice. Import restrictions and reactive measures, as well as non-commercial stock inclusion might have influenced these relationships.
+									</p>
+								</div>
+								<div class="p-5 basis-1/3 rounded-lg shadow-md">
+									<p>
+										Further improvements can be made through exploring potential variables such as agricultural policy interventions, and regional production and market dynamics, as well as their influence on retail prices. 
+									</p>
+								</div>
+							</div>
+							<p class="pt-8">
+								These insights highlight the need for strategic intervention to stabilize prices and support local farmers. Even in times when rice is being imported into the country due to national emergencies or relaxations on private traders, the state of local rice production in the country mainly determines the retail price of rice, regardless of the milling process. Hence, much care and attention must be given to our local producers and farmers, who have been underappreciated, mistreated, or even abused in history. Agricultural and economic policies must put them in the forefront because the condition of their livelihoods also dictates our own, as rice is the staple crop of the Philippines. Not only should the national government prioritize them through ways of increased financial and technological support, but the state of livelihoods should also be prioritized, especially as pressing issues such as private land development and climate change threaten them.
+							</p>
 						</div>
 					</div>
 				</section>
@@ -381,7 +413,7 @@
 							About Us
 						</header>
 						<div class="pt-12">
-							<ul class="flex flex-col md:flex-row gap-8">
+							<ul class="flex flex-col md:flex-row print:flex-col gap-8">
 								<li class="flex-1 p-8 text-center text-white bg-black">
 									<p class="text-2xl font-bold">Cal Dupalco</p>
 									<img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/avatar-the-last-airbender/b/b0/Aang_img.jpg?width=325" class="mx-auto my-8 w-1/2 md:w-full aspect-square object-cover rounded-full">
