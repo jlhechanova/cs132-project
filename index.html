@@ -243,20 +243,23 @@
 
 						<div class="pt-12">
 							<div class="flex justify-between">
-								<p class="text-2xl">Exploratory Data Analysis</p>
-								<button onclick="toggle('#explo')" class="flex justify-center items-center h-8 w-8 bg-slate-100 rounded-full">
+								<p class="text-2xl">Hypothesis Testing</p>
+								<button onclick="toggle('#hypothesis')" class="flex justify-center items-center h-8 w-8 bg-slate-100 rounded-full">
 									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 										<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 									  </svg>
 								</button>
 							</div>
-							<div id="explo" class="transition-all overflow-hidden" style="height: 0px;">
-								<div id="explocontent" class="pt-8">
+							<div id="hypothesis" class="transition-all overflow-hidden" style="height: 0px;">
+								<div id="hypothesiscontent" class="pt-8">
 									<div>
+										<p class="pb-4">
+											We used regression analysis methods, time-series analysis, correlation coefficients, and statistical tests to determine the relationships and verify significant findings in our data analysis.	
+										</p>
 										<div>
-											<p class="text-xl pb-4">Linear Regression</p>
+											<p class="text-xl pb-4">Linear Regression and Correlation Coefficients</p>
 											<p>
-												To test our first research question, we employed two modeling techniques: linear regression and polynomial regression. Linear regression is used to determine the correlation between independent variables and see if any of them are correlated with each other. Aside from the coefficients and the intercepts gained from linear regression modeling, both the Pearson’s correlation coefficient and the Spearman’s rank correlation coefficient were also calculated to determine how strongly correlated the variables are. Why we chose both is that Pearson’s correlation coefficient is great for determining linear correlation (or the change in variable X corresponds to a constant change in variable Y) while Spearman’s rank correlation coefficient is great for finding monotonic, nonlinear correlations between variables (in other words, if X increases, then Y increases and vice versa regardless of how great or little the change is).
+												Linear regression, Pearson’s correlation, and Spearman’s rank correlation were employed to deliberately determine and assess the correlation between each of the independent variables with the retail prices of rice, as well as between the local rice production and imports.
 											</p>
 										</div>
 			
