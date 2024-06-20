@@ -170,9 +170,12 @@
 						<header class="text-3xl">
 							Methodology
 						</header>
+						<p class="pt-12 text-xl">
+							Here’s an overview of our data science methodology:
+						</p>
 						<div class="pt-12">
 							<div class="flex justify-between">
-								<p class="text-2xl">Data Preparation and Preprocessing</p>
+								<p class="text-2xl">Data Preprocessing</p>
 								<button onclick="toggle('#dataprep')" class="flex justify-center items-center h-8 w-8 bg-slate-100 rounded-full">
 									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 										<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -183,19 +186,25 @@
 								<div id="dataprepcontent" class="pt-8">
 									<div>
 										<p>
-											Our initial dataset consists of the monthly regional data of the variables ranging from May 2023 to December 2023. However, we have recognized the need to widen the scope of the dataset for a more comprehensive analysis of trends and patterns on rice supply and prices in the Philippines over time. Hence, we expanded the data by obtaining the annual national data of rice supply and prices from 1995 to 2023 and the annual national data of economic variables from 2012 to 2023.
+											We employed several preprocessing methods to our data such as dataset expansion to derive more accurate and comprehensive analysis, handling missing values to ensure data completeness, and data transformation to ensure consistency on data formats.
+										</p>
+									</div>
+									<div class="pt-8">
+										<p class="font-bold">Dataset Expansion</p>
+										<p>
+											Our initial dataset consists of monthly regional data from May 2023 to December 2023. To obtain a more comprehensive analysis of trends and patterns on rice supply and prices in the Philippines over time, we expanded the data by obtaining the annual national data of rice supply and prices from 1995 to 2023 and the annual national data of economic variables from 2012 to 2023.
 										</p>
 									</div>
 									<div class="pt-8">
 										<p class="font-bold">Handling Missing Values</p>
 										<p>
-											The datasets for the annual data on rice production, rice importation, rice stocks, and rice retail prices were confirmed to have no missing values. However, we found that the suggested daily budget for 2016 was missing, where we decided to use the mean values from 2015 and 2017. Similarly, the average daily rice consumption for 2023 was not available, thus we used the mean of the values from 2012 to 2022 to fill for 2023.
+											We derived the data for the suggested food daily budget in the Philippines through dividing the collected monthly food threshold data for a family of five by 30, which is the average number of days in a month. However, we found that the suggested daily budget for 2016 was missing, hence, we decided to use the mean values from 2015 and 2017. Similarly, the average daily rice consumption for 2023 was not available, thus we used the mean of the values from 2012 to 2022 to fill for 2023.
 										</p>
 									</div>
 									<div class="pt-8">
 										<p class="font-bold">Data Transformation</p>
 										<p>
-											The values in the datasets we obtained were formatted as comma-separated numbers, which were considered strings and had to be converted to numerics to become suitable for quantitative operations.
+											Some values in the datasets we obtained were formatted as comma-separated numbers, which were considered strings and had to be converted to numerics to become suitable for quantitative operations.
 										</p>
 									</div>
 								</div>
